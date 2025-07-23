@@ -1,5 +1,3 @@
-<!-- <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif
-" width="400" height="300"/> -->
 
 <div align="center"> 
   <h1>💛 Journey Of a DevOps Engineer 🌟 </h1>
@@ -84,51 +82,11 @@ The course assumes a sample application with 5 microservices + MySQL, starting f
 - Introduce basic scaling and resiliency checks.
 
 
-## Phase 3: Adding Replicas for High Availability
+## Phase 3: Automating CI/CD Pipelines
 
 **To-DO**:
 
-- Update Kubernetes deployments to add replicas (e.g., 2-3 pods per service for the 5 apps and MySQL).
-- Configure Horizontal Pod Autoscaler (HPA) in EKS for automatic scaling based on CPU/metrics.
-- Test failover scenarios (e.g., kill a pod and observe recovery).
-- Update networking to support replicas (e.g., service load balancing in Kubernetes).
-- Discuss trade-offs: Cost vs. reliability in single vs. multi-AZ.
-
-**Outcome**:
-
-- Demonstrate improved resiliency with replicas, showing how the system handles failures without downtime.
-- Participants understand HA basics in containerized environments, including pod distribution across nodes.
-
-**Next**:
-
-- Integrate Redis for caching to optimize performance and reduce DB load.
-
-
-## Phase 4: Integrating Redis for Caching
-
-**To-DO**:
-
-- Add Redis as a caching layer (e.g., deploy as a Kubernetes service, integrate with apps for session storage/query caching).
-- Update application code/config to use Redis (e.g., cache frequent MySQL queries).
-- Configure Redis replicas for HA and persistence.
-- Update Terraform to provision managed Redis (e.g., AWS ElastiCache) in dev/prod.
-- Test cache invalidation and performance improvements.
-
-**Outcome**:
-
-- Show how caching reduces latency and DB load, with metrics before/after integration.
-- Learners grasp caching strategies in microservices, including consistency challenges.
-
-**Next**:
-
-- Automate deployments with CI/CD pipelines for efficient rollouts.
-
-
-## Phase 5: Automating CI/CD Pipelines
-
-**To-DO**:
-
-- Design and implement CI/CD using chosen tool (e.g., GitHub Actions): Build Docker images, push to ECR, deploy to EKS via Helm/Kustomize.
+- Design and implement CI/CD using chosen tool (e.g., GitHub Actions): Build Docker images, push to ECR, deploy to EKS via Helm.
 - Add security scans (e.g., Trivy for images) and tests in the pipeline.
 - Configure rollouts/rollbacks (e.g., blue-green deployments).
 - Integrate with Terraform for infra changes in CI/CD.
@@ -141,37 +99,117 @@ The course assumes a sample application with 5 microservices + MySQL, starting f
 
 **Next**:
 
-- Add observability tools for monitoring and alerting.
+- Adding Replicas for High Availability
 
 
-## Phase 6: Implementing Observability and Monitoring
+## Phase 4: Adding Replicas for High Availability & Deployment Strategy
 
 **To-DO**:
 
+- Update Kubernetes deployments to add replicas (e.g., 2-3 pods per service for the 5 apps and MySQL).
+- Configure Horizontal Pod Autoscaler (HPA) in EKS for automatic scaling based on CPU/metrics.
+- Test failover scenarios (e.g., kill a pod and observe recovery).
+- Update networking to support replicas (e.g., service load balancing in Kubernetes).
+
+**Outcome**:
+
+- Demonstrate improved resiliency with replicas, showing how the system handles failures without downtime.
+- Participants understand HA basics in containerized environments, including pod distribution across nodes.
+
+**Next**:
+
+- Prod Environment Setup
+
+
+## Phase 5: Prod Environment Setup
+
+**To-DO**:
+
+- Provisioning Infra using Terraform.
+    - Create the infra in front of the audience via Atlantis.
+        - Creating VPC Networking (subnets, security groups etc).
+        - Creating EKS cluster with required add-ons.
+        - Creating ECR (Elastic Container Registry) for image storage.
+
+- Deploy applications in EKS using HELM via CI/CD (push images to ECR, apply Kubernetes manifests).
+- Run/show application via kube LoadBalancers with https.
+- Test failover scenarios (Increase Load using some load generator service) & check the application & DB state.
+
+**Outcome**:
+
+- Infra Provisiong Automation. Only after legit approval anyone can merge the PR.
+- Show working demo app running via LB, demonstrating end-to-end flow.
+
+**Next**:
+
+- Implementing Monitoring & Logging
+
+
+## Phase 6: Implementing Monitoring & Logging
+
+**To-DO**:
+
+- Setup Grafana Alloy as a agent scrapping/recieveing obervability data.
 - Set up Prometheus for metrics collection from EKS pods, Redis, and MySQL.
 - Integrate Grafana for dashboards and alerting (e.g., alerts on high CPU, low replicas).
-- Add logging with ELK stack or AWS CloudWatch.
-- Configure distributed tracing (e.g., Jaeger) for microservices.
-- Define SLOs/SLIs and test with sample incidents.
+- Add logging with Grafana Loki.
 
 **Outcome**:
 
 - Deliver visibility into system health, enabling proactive issue resolution.
-- Learners learn to troubleshoot using real-time data and alerts.
+- Learners learn to troubleshoot using real-time logging data.
+
+**Next**:
+
+- Improve application performance by integrating read replica & caching to optimize database performance.
+
+## Phase 7: Integrating Read Replica & Caching for Performance
+
+**To-DO**:
+
+- Add Read Replica for DB.
+- Add Redis as a caching layer (e.g., deploy as a Kubernetes service, integrate with apps for session storage/query caching).
+- Update application code/config to use Read Replicas & Redis (e.g., cache frequent MySQL queries).
+- Update Terraform to provision managed Redis (e.g., AWS ElastiCache) in dev/prod.
+- Test cache invalidation and performance improvements.
+
+**Outcome**:
+
+- Show how caching reduces latency and DB load, with metrics before/after integration.
+- Learners grasp caching strategies in microservices, including consistency challenges.
+
+**Next**:
+
+- Improving observability tools for tracing, How application to application calls are behaving.
+
+
+## Phase 8: Implementing Observability and Monitoring
+
+**To-DO**:
+
+- Improve Grafana Alloy agent to work with traces.
+- Configure distributed tracing using Tempo for microservices.
+- Logging based on trace spans.
+- Setup Profiling.
+<!-- - Define SLOs/SLIs and test with sample incidents. -->
+
+**Outcome**:
+
+- Deliver visibility into application to application calls using tempo, enabling proactive issue resolution.
+- Adding Logging for spans to troubleshoot specific span issue.
+- Adding profiling for tracking application functional behaviour based on ebpf (cpu) & memory.
 
 **Next**:
 
 - Enhance security with advanced compliance and threat modeling.
 
 
-## Phase 7: Advanced Security and Compliance
+## Phase 9: Advanced Security and Compliance
 
 **To-DO**:
 
 - Implement Policy as Code (e.g., OPA) for EKS compliance checks.
-- Add threat modeling sessions and SBOM generation in CI/CD.
 - Configure zero-trust networking (e.g., Istio service mesh).
-- Audit logs and compliance reports (e.g., for GDPR/SOC2).
 - Run security scans and penetration testing.
 
 **Outcome**:
@@ -184,7 +222,7 @@ The course assumes a sample application with 5 microservices + MySQL, starting f
 - Scale to production with multi-AZ and global distribution.
 
 
-## Phase 8: Production Scaling and Resiliency
+## Phase 10: Production Scaling and Resiliency
 
 **To-DO**:
 
@@ -204,7 +242,13 @@ The course assumes a sample application with 5 microservices + MySQL, starting f
 - Introduce microservices refinements and event-driven architecture.
 
 
-## Phase 9: Microservices Optimization and Event-Driven Design
+### Phase 11: Cost vs. reliability
+
+- Discuss trade-offs: Cost vs. reliability in single vs. multi-AZ.
+- Review costs, performance, and optimizations.
+
+
+<!-- ## Phase 11: Microservices Optimization and Event-Driven Design
 
 **To-DO**:
 
@@ -224,7 +268,7 @@ The course assumes a sample application with 5 microservices + MySQL, starting f
 - Capstone: Full enterprise integration and review.
 
 
-## Phase 10: Enterprise Integration and Capstone
+## Phase 12: Enterprise Integration and Capstone
 
 **To-DO**:
 
@@ -240,5 +284,5 @@ The course assumes a sample application with 5 microservices + MySQL, starting f
 
 **Next**:
 
-- Course wrap-up: Certifications, real-world applications, and community resources.
+- Course wrap-up: Certifications, real-world applications, and community resources. -->
 
