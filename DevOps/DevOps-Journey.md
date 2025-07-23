@@ -3,7 +3,7 @@
 
 <div align="center"> 
   <h1>💛 Journey Of a DevOps Engineer 🌟 </h1>
-  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+-+Journey+Of+a+DevOps+Engineer+From+Day+1+to+Serving+Million." alt="Typing SVG" /> </a>  
+  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+--+Journey+Of+a+DevOps+Engineer+From+Day+1+to+Serving+Million." alt="Typing SVG" /> </a>  
   <br>
   </div>
 
