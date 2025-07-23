@@ -36,7 +36,8 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 **📈 Key Learnings:** A shared understanding of the fundamental qualities of robust systems and the terminology used to describe them, preparing your mindset for problem-solving.
 
-➡️ *Explore Foundational Concepts →*
+    ➡️ *Explore Foundational Concepts →*
+
 
 > [!NOTE]
 > 1. 🚀 Day 1: The Startup Sprint on Bare Metal (The System Admin's Perspective)
@@ -68,7 +69,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:* The immediate pain of manual operations, the absolute necessity of documentation (even informal), and the initial thoughts on reliability for a standalone system. This phase builds an appreciation for automation.
 
-➡️ *Explore Initial Setup & Challenges →*
+    ➡️ *Explore Initial Setup & Challenges →*
 
 > [!NOTE]
 > 2. ⚙️ Early Growth: Automating the Chaos (The Genesis of "Ops")
@@ -112,7 +113,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The power of automation, the shift from "doing it manually" to "scripting it," and the first steps towards repeatable processes and distributing load across multiple machines and ensuring data availability. You learn that scaling isn't just about adding servers, but also about managing them efficiently.
 
-➡️ *Explore Automation & Version Control →*
+    ➡️ *Explore Automation & Version Control →*
 
 > [!NOTE]
 > 3. 📦 Scaling & Isolation: Virtualization & Containerization (The "Dev" Meets "Ops")
@@ -158,7 +159,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The leap from physical to virtual, the paradigm shift with containers, the initial taste of declarative infrastructure, and the critical role of load balancing and caching for high availability and performance. You learn to think about application packaging and traffic flow more strategically.
 
-➡️ *Explore Virtualization & Containerization →*
+    ➡️ *Explore Virtualization & Containerization →*
 
 > [!NOTE]
 > 4. 🔒 Integrating Security: Shifting Left (The "Sec" Enters the Picture)
@@ -206,7 +207,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The proactive approach to security, integrating security tools into CI/CD, and the importance of secure coding practices and layered network defense, with a focus on data security. You learn that security is everyone's responsibility, not just a separate team's.
 
-➡️ *Explore Shift-Left Security →*
+    ➡️ *Explore Shift-Left Security →*
 
 > [!NOTE]
 > 5. ☁️ Cloud Adoption & Modern Infrastructure (Scaling with Cloud-Native DevSecOps)
@@ -264,7 +265,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  Designing for the cloud, leveraging managed services, adapting security practices to a dynamic cloud environment, and embracing auto-scaling, global distribution, and managed data/caching solutions. You learn to think about infrastructure as code and as a service.
 
-➡️ *Explore Cloud Adoption & Modern Infrastructure →*
+    ➡️ *Explore Cloud Adoption & Modern Infrastructure →*
 
 > [!NOTE]
 > 6. 🏛️ Enterprise DevSecOps: Advanced Practices & Governance
@@ -344,22 +345,22 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The complexities of large-scale DevSecOps, the importance of governance, and the continuous evolution of security and operational excellence in a truly global and distributed context, with deep dives into advanced database and caching strategies and distributed system design patterns. You learn to lead and drive organizational change.
 
-➡️ *Explore Enterprise DevSecOps →*
+   ➡️ *Explore Enterprise DevSecOps →*
 
-✅ Who Is This For?
+## ✅ Who Is This For?
 
-> [NOTE]
-> `Aspiring DevSecOps Engineers:` Individuals with IT or development backgrounds looking to enter the field.
+> [!NOTE]
+> *Aspiring DevSecOps Engineers:* Individuals with IT or development backgrounds looking to enter the field.
 >
-> `System Administrators:` Those wanting to transition to modern DevOps/DevSecOps practices.
+> *System Administrators:* Those wanting to transition to modern DevOps/DevSecOps practices.
 >
-> `Developers:` Engineers aiming to understand the operational and security aspects of their applications.
+> *Developers:* Engineers aiming to understand the operational and security aspects of their applications.
 >
-> `DevOps/SRE Engineers:` Professionals seeking to deepen their security knowledge and implement advanced practices.
+> *DevOps/SRE Engineers:* Professionals seeking to deepen their security knowledge and implement advanced practices.
 >
-> `Cloud & Platform Architects:` Anyone involved in designing scalable, secure, and observable production systems.
+> *Cloud & Platform Architects:* Anyone involved in designing scalable, secure, and observable production systems.
 >
-> `Security Professionals:` Those looking to integrate security earlier and more effectively into the software delivery lifecycle.
+> *Security Professionals:* Those looking to integrate security earlier and more effectively into the software delivery lifecycle.
 
 ## 📌 What's Included in Each Session
 
