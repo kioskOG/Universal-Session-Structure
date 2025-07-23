@@ -38,7 +38,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 ➡️ *Explore Foundational Concepts →*
 
-> [NOTE]
+> [!NOTE]
 > 1. 🚀 Day 1: The Startup Sprint on Bare Metal (The System Admin's Perspective)
 
 **📌 Scenario:**: (Case 1: New Engineer): You're an engineer, new to the world of operations. The startup needs to launch a product yesterday. There's no cloud, just a few physical servers. Your immediate goal is to get the application running and accessible.
@@ -70,7 +70,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 ➡️ *Explore Initial Setup & Challenges →*
 
-> [NOTE]
+> [!NOTE]
 > 2. ⚙️ Early Growth: Automating the Chaos (The Genesis of "Ops")
 
 **📌 Scenario:** (Case 1: New Engineer): The product is gaining traction. The single server is constantly maxed out, and manual updates are causing downtime. You're spending all your time fixing things.
@@ -114,7 +114,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 ➡️ *Explore Automation & Version Control →*
 
-> [NOTE]
+> [!NOTE]
 > 3. 📦 Scaling & Isolation: Virtualization & Containerization (The "Dev" Meets "Ops")
 
 **📌 Scenario:** (Case 1: New Engineer): The user base is growing rapidly, and managing individual bare-metal servers is becoming complex. Dependencies are conflicting between applications, and developers complain about "it works on my machine" issues. You need better isolation and resource utilization. Your simple traffic distribution is not smart enough, and the database is still struggling with read performance.
@@ -160,7 +160,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 ➡️ *Explore Virtualization & Containerization →*
 
-> [NOTE]
+> [!NOTE]
 > 4. 🔒 Integrating Security: Shifting Left (The "Sec" Enters the Picture)
 
 **📌 Scenario:** (Case 1: New Engineer): The product is successful, but a security incident just occurred (e.g., a data breach, a defaced website). Management is worried, and security is now seen as a bottleneck. The expanding infrastructure (VMs, containers, load balancers, databases, caches) introduces new attack surfaces.
@@ -208,7 +208,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 ➡️ *Explore Shift-Left Security →*
 
-> [NOTE]
+> [!NOTE]
 > 5. ☁️ Cloud Adoption & Modern Infrastructure (Scaling with Cloud-Native DevSecOps)
 
 **📌 Scenario:** (Case 1: New Engineer): The on-prem infrastructure is becoming too costly, complex to manage, and lacks the agility needed for rapid innovation and global reach. Scaling the existing VM/container setup, databases, and caches is hitting physical limits.
@@ -266,7 +266,7 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 ➡️ *Explore Cloud Adoption & Modern Infrastructure →*
 
-> [NOTE]
+> [!NOTE]
 > 6. 🏛️ Enterprise DevSecOps: Advanced Practices & Governance
 
 **📌 Scenario:** (Case 2: Professional DevSecOps Engineer): The organization is now large, with multiple teams, complex microservices applications, and stringent compliance requirements. You need to standardize, optimize, and ensure continuous security and reliability across a highly distributed, multi-cloud, or hybrid cloud environment, with massive data and caching needs.
