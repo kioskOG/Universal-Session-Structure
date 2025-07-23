@@ -36,11 +36,9 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 
 **📈 Key Learnings:** A shared understanding of the fundamental qualities of robust systems and the terminology used to describe them, preparing your mindset for problem-solving.
 
-    ➡️ *Explore Foundational Concepts →*
+➡️ **[Explore Foundational Concepts Session →](#)**
 
-
-> [!NOTE]
-> 1. 🚀 Day 1: The Startup Sprint on Bare Metal (The System Admin's Perspective)
+### 1. 🚀 Day 1: The Startup Sprint on Bare Metal (The System Admin's Perspective)
 
 **📌 Scenario:**: (Case 1: New Engineer): You're an engineer, new to the world of operations. The startup needs to launch a product yesterday. There's no cloud, just a few physical servers. Your immediate goal is to get the application running and accessible.
 
@@ -69,10 +67,10 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:* The immediate pain of manual operations, the absolute necessity of documentation (even informal), and the initial thoughts on reliability for a standalone system. This phase builds an appreciation for automation.
 
-    ➡️ *Explore Initial Setup & Challenges →*
+➡️ **[Explore Initial Setup & Challenges Session →](#)**
 
-> [!NOTE]
-> 2. ⚙️ Early Growth: Automating the Chaos (The Genesis of "Ops")
+
+### 2. ⚙️ Early Growth: Automating the Chaos (The Genesis of "Ops")
 
 **📌 Scenario:** (Case 1: New Engineer): The product is gaining traction. The single server is constantly maxed out, and manual updates are causing downtime. You're spending all your time fixing things.
 
@@ -113,10 +111,10 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The power of automation, the shift from "doing it manually" to "scripting it," and the first steps towards repeatable processes and distributing load across multiple machines and ensuring data availability. You learn that scaling isn't just about adding servers, but also about managing them efficiently.
 
-    ➡️ *Explore Automation & Version Control →*
+➡️ **[Explore Automation & Version Control Session →](#)**
 
-> [!NOTE]
-> 3. 📦 Scaling & Isolation: Virtualization & Containerization (The "Dev" Meets "Ops")
+
+### 3. 📦 Scaling & Isolation: Virtualization & Containerization (The "Dev" Meets "Ops")
 
 **📌 Scenario:** (Case 1: New Engineer): The user base is growing rapidly, and managing individual bare-metal servers is becoming complex. Dependencies are conflicting between applications, and developers complain about "it works on my machine" issues. You need better isolation and resource utilization. Your simple traffic distribution is not smart enough, and the database is still struggling with read performance.
 
@@ -159,10 +157,10 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The leap from physical to virtual, the paradigm shift with containers, the initial taste of declarative infrastructure, and the critical role of load balancing and caching for high availability and performance. You learn to think about application packaging and traffic flow more strategically.
 
-    ➡️ *Explore Virtualization & Containerization →*
 
-> [!NOTE]
-> 4. 🔒 Integrating Security: Shifting Left (The "Sec" Enters the Picture)
+➡️ **[Explore Virtualization & Containerization Session →](#)**
+
+### 4. 🔒 Integrating Security: Shifting Left (The "Sec" Enters the Picture)
 
 **📌 Scenario:** (Case 1: New Engineer): The product is successful, but a security incident just occurred (e.g., a data breach, a defaced website). Management is worried, and security is now seen as a bottleneck. The expanding infrastructure (VMs, containers, load balancers, databases, caches) introduces new attack surfaces.
 
@@ -207,10 +205,10 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The proactive approach to security, integrating security tools into CI/CD, and the importance of secure coding practices and layered network defense, with a focus on data security. You learn that security is everyone's responsibility, not just a separate team's.
 
-    ➡️ *Explore Shift-Left Security →*
+➡️ **[Explore Shift-Left Security Session →](#)**
 
-> [!NOTE]
-> 5. ☁️ Cloud Adoption & Modern Infrastructure (Scaling with Cloud-Native DevSecOps)
+
+### 5. ☁️ Cloud Adoption & Modern Infrastructure (Scaling with Cloud-Native DevSecOps)
 
 **📌 Scenario:** (Case 1: New Engineer): The on-prem infrastructure is becoming too costly, complex to manage, and lacks the agility needed for rapid innovation and global reach. Scaling the existing VM/container setup, databases, and caches is hitting physical limits.
 
@@ -265,10 +263,10 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  Designing for the cloud, leveraging managed services, adapting security practices to a dynamic cloud environment, and embracing auto-scaling, global distribution, and managed data/caching solutions. You learn to think about infrastructure as code and as a service.
 
-    ➡️ *Explore Cloud Adoption & Modern Infrastructure →*
+➡️ **[Explore Cloud Adoption & Modern Infrastructure Session →](#)**
 
-> [!NOTE]
-> 6. 🏛️ Enterprise DevSecOps: Advanced Practices & Governance
+
+### 6. 🏛️ Enterprise DevSecOps: Advanced Practices & Governance
 
 **📌 Scenario:** (Case 2: Professional DevSecOps Engineer): The organization is now large, with multiple teams, complex microservices applications, and stringent compliance requirements. You need to standardize, optimize, and ensure continuous security and reliability across a highly distributed, multi-cloud, or hybrid cloud environment, with massive data and caching needs.
 
@@ -345,9 +343,10 @@ This roadmap mirrors the growth of a product, from a quick launch to serving mil
 >
 > *Key Learnings:*  The complexities of large-scale DevSecOps, the importance of governance, and the continuous evolution of security and operational excellence in a truly global and distributed context, with deep dives into advanced database and caching strategies and distributed system design patterns. You learn to lead and drive organizational change.
 
-   ➡️ *Explore Enterprise DevSecOps →*
+➡️ **[Explore Enterprise DevSecOps Session →](#)**
 
-## ✅ Who Is This For?
+
+### ✅ Who Is This For?
 
 > [!NOTE]
 > *Aspiring DevSecOps Engineers:* Individuals with IT or development backgrounds looking to enter the field.
