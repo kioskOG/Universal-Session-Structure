@@ -1,15 +1,68 @@
 
 <div align="center"> 
   <h1>💛 Journey Of a DevOps Engineer 🌟 </h1>
-  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+--+Journey+Of+a+DevOps+Engineer+From+Day+1+to+Serving+Million--" alt="Typing SVG" /> </a>  
+  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+--+Journey+Of+a+DevOps+From+Day+1+to+Serving+Million--" alt="Typing SVG" /> </a>  
   <br>
   </div>
 
-# DevSecOps Course Plan Canvas
 
-This document outlines a comprehensive, phased plan for a DevSecOps masterclass, simulating the journey of building and scaling a product for a client from scratch. It builds on the provided reference, completing the structure with logical progressions for Phases 3-10. Each phase includes **To-DO** tasks, **Outcome** goals, and **Next** steps to guide the course flow. The plan emphasizes practical, hands-on learning, evolving from basic setups to enterprise-level DevSecOps practices using AWS, EKS, Terraform, and other tools.
-
-The course assumes a sample application with 5 microservices + MySQL, starting from a Docker Compose file. Phases progress iteratively, addressing client expectations like cost-effectiveness, monitoring, and scalability.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070708ff; /* Light grey background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #b98111ff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            width: 800px; /* Max width for better readability */
+        }
+        .svg-container {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4 rounded-lg">💛 Journey Of a DevOps Engineer 🌟</h1>
+        <div class="svg-container">
+            <svg width="100%" height="80" viewBox="0 0 800 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#F727A9;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Main title text -->
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="url(#gradient)">
+                    -- Journey Of a DevOps From Day 1 to Serving Millions --
+                </text>
+            </svg>
+        </div>
+        <p class="text-lg text-gray-600">
+        This document outlines a comprehensive, phased plan for a DevSecOps masterclass, simulating the journey of building and scaling a product for a client from scratch. It builds on the provided reference, completing the structure with logical progressions for Phases 3-10. Each phase includes **To-DO** tasks, **Outcome** goals, and **Next** steps to guide the course flow. The plan emphasizes practical, hands-on learning, evolving from basic setups to enterprise-level DevSecOps practices using AWS, EKS, Terraform, and other tools.
+        The course assumes a sample application with 5 microservices + MySQL, starting from a Docker Compose file. Phases progress iteratively, addressing client expectations like cost-effectiveness, monitoring, and scalability.
+        </p>
+    </div>
+</body>
+</html>
 
 ## Overall Course Objectives
 
