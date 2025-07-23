@@ -1,9 +1,9 @@
-<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif
-" width="400" height="300"/>
+<!-- <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif
+" width="400" height="300"/> -->
 
 <div align="center"> 
-  <h1>💛 Journey Of a DevOps Engineer From Day 1 to Serving Million 🌟 </h1>
-  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+-+Run+complete+LGTM+Stack+on+Kubernetes+for+observability." alt="Typing SVG" /> </a>  
+  <h1>💛 Journey Of a DevOps Engineer 🌟 </h1>
+  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+-+Journey+Of+a+DevOps+Engineer+From+Day+1+to+Serving+Million." alt="Typing SVG" /> </a>  
   <br>
   </div>
 
