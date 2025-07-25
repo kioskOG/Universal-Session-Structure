@@ -1,137 +1,283 @@
-# 💡 DevSecOps Production Masterclass Series
 
-Welcome to the **DevSecOps Production Masterclass Series** — a comprehensive knowledge-sharing initiative designed to equip developers, architects, and operations engineers with **practical, production-ready design skills**.
+<div align="center"> 
+  <h1>💛 Journey Of a DevOps Engineer 🌟 </h1>
+  <a href="https://github.com/kioskOG/Universal-Session-Structure"><img src="https://readme-typing-svg.demolab.com?font=italic&weight=700&size=18&duration=4000&pause=1000&color=F727A9&center=true&width=600&lines=+--+Journey+Of+a+DevOps+From+Day+1+to+Serving+Million--" alt="Typing SVG" /> </a>  
+  <br>
+  </div>
 
-This series is *not* about tools alone. Instead, it's a complete roadmap to understanding **how real-world, cloud-native, secure, and observable production systems are designed, built, and scaled** from Day 1 to Day Infinity.
 
-Whether you're modernizing a monolith, building a greenfield platform, or evolving an SRE team — this series is your **real-world production companion**.
+## Overall Course Objectives
 
----
+- Simulate real-world DevSecOps evolution for a new client project.
+- Cover key pillars: Cloud Design, Network Design, Infrastructure Provisioning, CI/CD, Application Architecture, Microservices, Observability, HA/Scaling/Resiliency/Rollouts/Rollbacks, and Troubleshooting.
+- Focus on mindset: Iterative problem-solving, cost optimization, and security-by-design.
+- Tools: AWS, EKS/ECS, Terraform, GitHub Actions/Jenkins, Prometheus/Grafana, etc.
+- Duration: 10 phases, scalable to 10-20 sessions.
 
-## 📚 Index
 
-### 1. 🌩️ Cloud Design
+## Phase 1: Initial Client Onboarding and Infra Design
 
-* Multi-account setup (AWS Organizations, Landing Zones)
-* VPC Design: public/private subnets, NAT gateways
-* IAM Strategy (RBAC, permission boundaries, audit readiness)
-* Choosing the right services: ECS, EKS, Lambda, S3
-* Multi-region architectures (HA vs DR)
-* Billing segmentation, tagging, and cost allocation
-* Cloud security controls and threat models
+**To-DO**:
 
-➡️ **[View Session →](#)**
+- Introduce the scenario: New client project starting from scratch.
+- Show application flow as a diagram depicting 5 applications (e.g., frontend, auth service, payment service, user service, inventory service) + MySQL database, illustrating interactions (e.g., API calls, DB queries).
+- Review Docker Compose file shared by the client for local setup.
+- Discuss client expectations:
+    - Choosing Cloud to run application (AWS for its ecosystem and cost tools).
+    - Choosing Virtual Machine or Container as application orchestrator (Opt for containers via EKS for scalability over VMs).
+    - Setting up Monitoring/Alerting (Basic Prometheus/Grafana).
+    - Setup infra in most cost-effective way (Use spot instances, right-sizing, auto-scaling).
+- Initial level Infra design:
+    - Basic Cloud design: AWS with single-account setup, focusing on core services (EC2/EKS, RDS for MySQL).
+    - Networking Design - What/Why: VPC with public/private subnets for isolation (why: security and cost control); Networking Schema (diagram with subnets, IGW, NAT); Single AZ initially for cost, plan for Multi-AZ later.
+    - Virtual Machine or Container: Choose EKS for container orchestration (why: better for microservices scaling than raw VMs).
 
----
+**Outcome**:
 
-### 2. 🌐 Network Design
+- Convey client expectations and align on priorities.
+- Create or show:
+    - Application flow diagram shared by client.
+    - Proposed infra design by DevOps (diagram including AWS components, networking, EKS).
+    - Explanation of the entire Application/Infra diagram with networking concepts (e.g., subnets for traffic segregation).
+- Decide on Cloud (AWS) and Container Orchestrator (EKS).
 
-* VPC Peering, PrivateLink, Transit Gateway
-* VPN, Direct Connect: hybrid cloud topologies
-* Internal/external DNS design (Route 53, CoreDNS)
-* Network ACLs, security groups, firewall strategy
-* Zero Trust network design & microsegmentation
-* Service mesh: when and why
+**Next**:
 
-➡️ **[View Session →](#)**
+- Running application locally using Docker Compose to check the flow as communicated by Client.
+- IaC design discussion.
+- CI/CD tool and design discussion.
+- Infra deployment with working application deployed MANUALLY in EKS.
 
----
 
-### 3. 🛠️ Infrastructure Provisioning
+## Phase 2: Dev Environment Setup
 
-* Scalable Terraform project structure & remote state
-* GitOps vs IaC pipelines (ArgoCD, Atlantis, Spacelift)
-* Secrets management (AWS SSM, Vault, SealedSecrets)
-* Environment parity: dev, staging, production
-* Drift detection & remediation automation
-* Guardrails and policy-as-code integration (OPA)
+**To-DO**:
 
-➡️ **[View Session →](#)**
+- Run Docker Compose file locally to check if all services (5 apps + MySQL) are working as expected (verify API flows, DB connections).
+- Decide what Infra as Code tool to use - Discussion around options (Terraform vs. Pulumi; choose Terraform for maturity and community support).
+- Terraform Project Structure:
+    - Dev: Separate module for development environment.
+    - Prod: Separate module for production with stricter controls.
+- CI/CD Tool selection and design (e.g., GitHub Actions for simplicity; design pipeline for build/deploy).
+- Create the infra in front of the audience:
+    - Creating VPC Networking (subnets, security groups).
+    - Creating EKS cluster.
+    - Creating ECR (Elastic Container Registry) for image storage.
+- Deploy applications in EKS manually (push images to ECR, apply Kubernetes manifests).
+- Run/show application via kube port-forward proxy for local access.
 
----
+**Outcome**:
 
-### 4. 🚀 CI/CD Design
+- Participants gain basic design idea of Terraform, understanding how multiple projects (dev/prod) would be managed (e.g., modular code for reusability).
+- Show working app demo running via kube port proxy, demonstrating end-to-end flow.
 
-* GitHub Actions, Jenkins, Argo Workflows pipelines
-* Secure pipeline design (signing, attestations, gating)
-* Canary, Blue-Green, Progressive, Shadow deploys
-* CI/CD for polyrepos and monorepos
-* Artifact storage, provenance, SBOM & CVE validation
-* Shift-left testing and feedback loop optimization
+**Next**:
 
-➡️ **[View Session →](#)**
+- Add replicas for high availability in the cluster.
+- Introduce basic scaling and resiliency checks.
 
----
 
-### 5. 🧱 Application Architecture
+## Phase 3: Automating CI/CD Pipelines
 
-* 12-Factor design and common anti-patterns
-* REST vs gRPC vs GraphQL
-* Microservices vs modular monoliths
-* Configuration management (build-time vs runtime)
-* Feature flags, toggles, and A/B testing
-* API Gateway + Service Mesh integration strategies
+**To-DO**:
 
-➡️ **[View Session →](#)**
+- Design and implement CI/CD using chosen tool (e.g., GitHub Actions): Build Docker images, push to ECR, deploy to EKS via Helm.
+- Add security scans (e.g., Trivy for images) and tests in the pipeline.
+- Configure rollouts/rollbacks (e.g., blue-green deployments).
+- Integrate with Terraform for infra changes in CI/CD.
+- Demo a full pipeline run from code commit to deployment.
 
----
+**Outcome**:
 
-### 6. 🔭 Observability
+- Participants see automated, secure deployments, reducing manual errors and speeding up releases.
+- Emphasize shift-left security and GitOps principles.
 
-* Centralized logs, metrics, tracing: unified strategy
-* Observability stack: Prometheus, Grafana, Loki, Tempo
-* SLOs, SLIs, SLAs: measuring what matters
-* Alert fatigue management and routing best practices
-* Distributed tracing with OpenTelemetry
-* Correlating logs with incidents in real-time
+**Next**:
 
-➡️ **[View Session →](#)**
+- Adding Replicas for High Availability
 
----
 
-### 7. 📈 Scaling
+## Phase 4: Adding Replicas for High Availability & Deployment Strategy
 
-* App scaling: Horizontal, vertical, and beyond
-* Asynchronous processing & event-driven design
-* DB scaling: read replicas, partitioning, sharding
-* Caching layers (Redis, CDN, application-level)
-* Cost-aware scaling: spot instances, limits, quotas
-* Org scaling: platform teams, internal developer platforms
+**To-DO**:
 
-➡️ **[View Session →](#)**
+- Update Kubernetes deployments to add replicas (e.g., 2-3 pods per service for the 5 apps and MySQL).
+- Configure Horizontal Pod Autoscaler (HPA) in EKS for automatic scaling based on CPU/metrics.
+- Test failover scenarios (e.g., kill a pod and observe recovery).
+- Update networking to support replicas (e.g., service load balancing in Kubernetes).
 
----
+**Outcome**:
 
-## ✅ Who Is This For?
+- Demonstrate improved resiliency with replicas, showing how the system handles failures without downtime.
+- Participants understand HA basics in containerized environments, including pod distribution across nodes.
 
-* DevOps and DevSecOps Engineers
-* Cloud & Platform Architects
-* SREs and Infra Developers
-* Backend Engineers building cloud-native apps
-* Security-minded teams managing production environments
-* Anyone solving production challenges with scale, security, and simplicity
+**Next**:
 
-## 🔐 Bonus Tracks (coming soon)
+- Prod Environment Setup
 
-* 🔗 Supply Chain Security: SBOMs, provenance, sigstore
-* 📜 Policy as Code: Open Policy Agent, Kyverno, Gatekeeper
-* 🔥 Chaos Engineering: Failure injection, resilience testing
-* ⚙️ Platform Engineering & Internal Developer Portals (IDPs)
 
----
+## Phase 5: Prod Environment Setup
 
-## 📌 What's Included in Each Session
+**To-DO**:
 
-* 🧠 Mental models and production use cases
-* 🛠️ Architecture diagrams & code templates
-* ⚠️ Real-world failure scenarios and trade-offs
-* 📋 Checklists for security, resilience, and scale
-* 🎯 Actionable takeaways and open-source references
+- Provisioning Infra using Terraform.
+    - Create the infra in front of the audience via Atlantis.
+        - Creating VPC Networking (subnets, security groups etc).
+        - Creating EKS cluster with required add-ons.
+        - Creating ECR (Elastic Container Registry) for image storage.
 
----
+- Deploy applications in EKS using HELM via CI/CD (push images to ECR, apply Kubernetes manifests).
+- Run/show application via kube LoadBalancers with https.
+- Test failover scenarios (Increase Load using some load generator service) & check the application & DB state.
 
-Stay tuned as we publish detailed notes, diagrams, and hands-on examples with each session.  This is **production wisdom, distilled.**
+**Outcome**:
 
----
+- Infra Provisiong Automation. Only after legit approval anyone can merge the PR.
+- Show working demo app running via LB, demonstrating end-to-end flow.
 
-**Author**: Jatin Sharma
+**Next**:
+
+- Implementing Monitoring & Logging
+
+
+## Phase 6: Implementing Monitoring & Logging
+
+**To-DO**:
+
+- Setup Grafana Alloy as a agent scrapping/recieveing obervability data.
+- Set up Prometheus for metrics collection from EKS pods, Redis, and MySQL.
+- Integrate Grafana for dashboards and alerting (e.g., alerts on high CPU, low replicas).
+- Add logging with Grafana Loki.
+
+**Outcome**:
+
+- Deliver visibility into system health, enabling proactive issue resolution.
+- Learners learn to troubleshoot using real-time logging data.
+
+**Next**:
+
+- Improve application performance by integrating read replica & caching to optimize database performance.
+
+## Phase 7: Integrating Read Replica & Caching for Performance
+
+**To-DO**:
+
+- Add Read Replica for DB.
+- Add Redis as a caching layer (e.g., deploy as a Kubernetes service, integrate with apps for session storage/query caching).
+- Update application code/config to use Read Replicas & Redis (e.g., cache frequent MySQL queries).
+- Update Terraform to provision managed Redis (e.g., AWS ElastiCache) in dev/prod.
+- Test cache invalidation and performance improvements.
+
+**Outcome**:
+
+- Show how caching reduces latency and DB load, with metrics before/after integration.
+- Learners grasp caching strategies in microservices, including consistency challenges.
+
+**Next**:
+
+- Improving observability tools for tracing, How application to application calls are behaving.
+
+
+## Phase 8: Implementing Observability and Monitoring
+
+**To-DO**:
+
+- Improve Grafana Alloy agent to work with traces.
+- Configure distributed tracing using Tempo for microservices.
+- Logging based on trace spans.
+- Setup Profiling.
+<!-- - Define SLOs/SLIs and test with sample incidents. -->
+
+**Outcome**:
+
+- Deliver visibility into application to application calls using tempo, enabling proactive issue resolution.
+- Adding Logging for spans to troubleshoot specific span issue.
+- Adding profiling for tracking application functional behaviour based on ebpf (cpu) & memory.
+
+**Next**:
+
+- Enhance security with advanced compliance and threat modeling.
+
+
+## Phase 9: Advanced Security and Compliance
+
+**To-DO**:
+
+- Implement Policy as Code (e.g., OPA) for EKS compliance checks.
+- Configure zero-trust networking (e.g., Istio service mesh).
+- Run security scans and penetration testing.
+
+**Outcome**:
+
+- Ensure secure, compliant infrastructure, building client trust.
+- Participants understand integrating security throughout the lifecycle.
+
+**Next**:
+
+- Scale to production with multi-AZ and global distribution.
+
+
+## Phase 10: Production Scaling and Resiliency
+
+**To-DO**:
+
+- Upgrade to multi-AZ EKS for HA.
+- Implement auto-scaling groups and chaos engineering (e.g., Chaos Mesh tests).
+- Add global load balancing and CDN for traffic.
+- Optimize costs (e.g., reserved instances).
+- Test rollouts/rollbacks in prod-like setup.
+
+**Outcome**:
+
+- Achieve enterprise-scale resiliency, handling millions of users.
+- Demonstrate cost-effective scaling strategies.
+
+**Next**:
+
+- Introduce microservices refinements and event-driven architecture.
+
+
+### Phase 11: Cost vs. reliability
+
+- Discuss trade-offs: Cost vs. reliability in single vs. multi-AZ.
+- Review costs, performance, and optimizations.
+
+
+<!-- ## Phase 11: Microservices Optimization and Event-Driven Design
+
+**To-DO**:
+
+- Refine 5 apps into full microservices with API Gateway.
+- Add Kafka for event-driven communication.
+- Optimize database sharding and polyglot persistence.
+- Update CI/CD for independent service deploys.
+- Troubleshoot distributed system issues.
+
+**Outcome**:
+
+- Enable agile, decoupled services for faster iterations.
+- Learners master microservices patterns and troubleshooting.
+
+**Next**:
+
+- Capstone: Full enterprise integration and review.
+
+
+## Phase 12: Enterprise Integration and Capstone
+
+**To-DO**:
+
+- Integrate all components: Multi-cloud hybrid if needed, full observability, automated everything.
+- Conduct end-to-end testing and client demo simulation.
+- Review costs, performance, and optimizations.
+- Discuss ongoing maintenance and SRE practices.
+
+**Outcome**:
+
+- Complete a production-ready system, ready for millions of users.
+- Participants gain confidence in end-to-end DevSecOps delivery.
+
+**Next**:
+
+- Course wrap-up: Certifications, real-world applications, and community resources. -->
+
