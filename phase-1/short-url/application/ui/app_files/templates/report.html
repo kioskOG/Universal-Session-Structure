@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All URLs Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #dbe2ef;
+        }
+        main {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .error-message {
+            color: red;
+        }
+        /* Icon styling */
+        .fas {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a>
+    </nav>
+    <main>
+        <section id="all-urls">
+            {% if data %}
+                <h2><i class="fas fa-link"></i> All URLs</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-id-badge"></i> ID</th>
+                            <th><i class="fas fa-link"></i> Long URL</th>
+                            <th><i class="fas fa-link"></i> Short URL</th>
+                            <th><i class="fas fa-users"></i> Visitors</th>
+                        </tr>
+                    </thead>
+                    <tbody id="all-urls-list">
+                        {% for item in data %}
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td>{{ item.link }}</td>
+                                <td>{{ item.short_url }}</td>
+                                <td>{{ item.visitors }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% elif error %}
+                <p class="error-message">{{ error }}</p>
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Create an Account</h1>
+
+<form action="#" method="post" id="signup-form">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username">
+    <span class="error-message" id="username-error"></span>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <span class="error-message" id="email-error"></span>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <span class="error-message" id="password-error"></span>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Validate the form fields
+        var username = document.getElementById('username').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var password = document.getElementById('password').value.trim();
+        var usernameError = document.getElementById('username-error');
+        var emailError = document.getElementById('email-error');
+        var passwordError = document.getElementById('password-error');
+        var isValid = true;
+
+        // Reset error messages
+        usernameError.textContent = '';
+        emailError.textContent = '';
+        passwordError.textContent = '';
+
+        // Validate username
+        if (username === '') {
+            usernameError.textContent = 'Username is required';
+            isValid = false;
+        }
+
+        // Validate email
+        if (email === '') {
+            emailError.textContent = 'Email is required';
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            emailError.textContent = 'Invalid email address';
+            isValid = false;
+        }
+
+        // Validate password
+        if (password === '') {
+            passwordError.textContent = 'Password is required';
+            isValid = false;
+        } else if (password.length < 6) {
+            passwordError.textContent = 'Password must be at least 6 characters long';
+            isValid = false;
+        }
+
+        // If the form is valid, submit it
+        if (isValid) {
+            this.submit();
+        }
+    });
+
+    // Function to validate email address
+    function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+</script>
+
+{% if msg %}
+<div class="alert alert-success alert-dismissible">
+    <a href="{{ url_for('register')}}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{ msg }}!</strong>
+  </div>
+{% endif %}
+
+</body>
+</html>
